@@ -1,0 +1,47 @@
+---
+import { ArrowRight, MessageCircle } from '@lucide/astro';
+import { business, whatsappUrl } from '@/content/site';
+---
+
+<section class="bg-white">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.12fr_0.88fr] md:items-center lg:px-8 lg:py-24">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Contadora en Santiago, Chile</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-normal text-navy-900 sm:text-5xl lg:text-6xl">
+        Servicios contables para pequeñas empresas y emprendedores en Santiago
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+        Contabilidad mensual clara, apoyo en declaración de impuestos, constitución de empresa y asesoría tributaria práctica para negocios en crecimiento en Chile.
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a
+          href={whatsappUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-lg bg-sage-600 px-5 py-3 text-base font-semibold text-white no-underline hover:bg-sage-700"
+        >
+          <MessageCircle size={20} aria-hidden="true" />
+          Consultar por WhatsApp
+        </a>
+        <a
+          href="/services"
+          class="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-200 px-5 py-3 text-base font-semibold text-navy-900 no-underline hover:bg-navy-50"
+        >
+          Ver servicios
+          <ArrowRight size={18} aria-hidden="true" />
+        </a>
+      </div>
+    </div>
+    <div class="rounded-lg border border-slate-200 bg-navy-900 p-6 text-white shadow-soft">
+      <div class="rounded-lg bg-white p-6 text-navy-900">
+        <p class="text-sm font-semibold text-sage-700">Disponible para nuevos clientes</p>
+        <p class="mt-4 text-2xl font-bold">Contabilidad para mantener tu negocio ordenado.</p>
+        <div class="mt-6 grid gap-4 text-sm text-slate-600">
+          <p><strong class="text-navy-900">Ubicación:</strong> {business.city}, Chile</p>
+          <p><strong class="text-navy-900">Horario:</strong> {business.hours}</p>
+          <p><strong class="text-navy-900">Ideal para:</strong> pymes, emprendedores, prestadores de servicios y profesionales independientes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

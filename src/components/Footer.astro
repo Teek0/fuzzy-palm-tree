@@ -1,0 +1,29 @@
+---
+import { business, navItems, whatsappUrl } from '@/content/site';
+---
+
+<footer class="border-t border-slate-200 bg-white">
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 md:grid-cols-3 lg:px-8">
+    <div>
+      <p class="font-bold text-navy-900">{business.name}</p>
+      <p class="mt-3 text-sm leading-6 text-slate-600">Servicios contables independientes para pequeñas empresas y emprendedores en Santiago, Chile.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-navy-900">Páginas</p>
+      <div class="mt-3 grid gap-2">
+        {navItems.map((item) => <a class="text-sm text-slate-600 no-underline hover:text-navy-900" href={item.href}>{item.label}</a>)}
+      </div>
+    </div>
+    <div>
+      <p class="font-semibold text-navy-900">Contacto</p>
+      <div class="mt-3 grid gap-2 text-sm text-slate-600">
+        <a class="text-slate-600 no-underline hover:text-navy-900" href={`mailto:${business.email}`}>{business.email}</a>
+        <a class="text-slate-600 no-underline hover:text-navy-900" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">{business.phone}</a>
+        <span>{business.hours}</span>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-slate-200 px-4 py-5 text-center text-xs text-slate-500">
+    © {new Date().getFullYear()} {business.name}. Este sitio no recopila documentos tributarios sensibles.
+  </div>
+</footer>

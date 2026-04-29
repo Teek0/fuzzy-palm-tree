@@ -1,0 +1,34 @@
+---
+import { absoluteUrl, localBusinessSchema, pageTitle, type SeoProps } from '@/lib/seo';
+import { business } from '@/content/site';
+
+const {
+  title,
+  description,
+  path = '/',
+  image = '/og-image.jpg',
+  type = 'website'
+} = Astro.props as SeoProps;
+
+const fullTitle = pageTitle(title);
+const canonical = absoluteUrl(path);
+const imageUrl = absoluteUrl(image);
+const schema = localBusinessSchema();
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content={type} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:locale" content="es_CL" />
+<meta property="og:site_name" content={business.name} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

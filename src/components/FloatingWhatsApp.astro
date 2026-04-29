@@ -1,0 +1,14 @@
+---
+import { MessageCircle } from '@lucide/astro';
+import { whatsappUrl } from '@/content/site';
+---
+
+<a
+  href={whatsappUrl()}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-full bg-sage-600 text-white shadow-soft transition hover:bg-sage-700"
+  aria-label="Contactar por WhatsApp"
+>
+  <MessageCircle size={26} aria-hidden="true" />
+</a>

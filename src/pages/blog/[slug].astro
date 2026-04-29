@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getPost, getPosts, portableTextToHtml } from '@/lib/sanity';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post) => ({ params: { slug: post.slug } }));
+}
+
+const { slug } = Astro.params;
+const post = slug ? await getPost(slug) : null;
+
+if (!post) {
+  return Astro.redirect('/blog');
+}
+
+const postHtml = portableTextToHtml(post.body);
+---
+
+<BaseLayout
+  seo={{
+    title: post.seoTitle || post.title,
+    description: post.seoDescription || post.excerpt,
+    path: `/blog/${post.slug}`,
+    type: 'article'
+  }}
+>
+  <article class="bg-white">
+    <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <a href="/blog" class="text-sm font-semibold text-sage-700 no-underline hover:text-sage-600">Volver al blog</a>
+      <p class="mt-8 text-sm text-slate-500">{new Date(post.publishedAt).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      <h1 class="mt-4 text-4xl font-bold tracking-normal text-navy-900 sm:text-5xl">{post.title}</h1>
+      <p class="mt-6 text-xl leading-8 text-slate-600">{post.excerpt}</p>
+      <div class="prose prose-slate mt-10 max-w-none prose-headings:text-navy-900 prose-a:text-sage-700">
+        {postHtml ? <Fragment set:html={postHtml} /> : (
+          <>
+            <p>Este artículo de ejemplo se muestra hasta conectar Sanity CMS. Reemplázalo creando una publicación en Sanity con el mismo slug o quitando el contenido de ejemplo desde <code>src/lib/sanity.ts</code>.</p>
+            <h2>Comienza con registros ordenados</h2>
+            <p>Mantén documentos de venta, compras, remuneraciones y vencimientos tributarios organizados desde el inicio de cada mes.</p>
+            <h2>Pide ayuda antes del vencimiento</h2>
+            <p>El trabajo contable es más rápido y preciso cuando las dudas se resuelven antes de presentar declaraciones.</p>
+          </>
+        )}
+      </div>
+    </div>
+  </article>
+</BaseLayout>

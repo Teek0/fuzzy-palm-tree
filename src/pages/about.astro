@@ -1,0 +1,27 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import FinalCTA from '@/components/FinalCTA.astro';
+import placeholder from '@/assets/accountant-placeholder.svg';
+---
+
+<BaseLayout
+  seo={{
+    title: 'Sobre la contadora',
+    description:
+      'Conoce a una contadora independiente en Santiago que ofrece servicios contables confiables, claros y prácticos para emprendedores y pymes.',
+    path: '/about'
+  }}
+>
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[0.9fr_1.1fr] md:items-center lg:px-8">
+      <img src={placeholder.src} alt="Espacio para foto real de la contadora" class="w-full rounded-lg border border-slate-200 bg-slate-100 shadow-sm" />
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Sobre mí</p>
+        <h1 class="mt-4 text-4xl font-bold tracking-normal text-navy-900 sm:text-5xl">Contabilidad profesional con comunicación clara.</h1>
+        <p class="mt-6 leading-8 text-slate-600">Esta oficina contable independiente apoya a emprendedores, profesionales independientes y pequeñas empresas en Santiago con trabajo mensual ordenado, orientación tributaria práctica y una comunicación directa.</p>
+        <p class="mt-4 leading-8 text-slate-600">La prioridad es simple: ayudarte a entender qué debe hacerse, cuándo debe hacerse y qué documentos se requieren, manteniendo la información sensible en canales privados adecuados.</p>
+      </div>
+    </div>
+  </section>
+  <FinalCTA />
+</BaseLayout>
