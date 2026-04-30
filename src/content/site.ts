@@ -14,12 +14,18 @@ export const business = {
     'Hola, quiero cotizar servicios contables para mi negocio en Santiago.'
 } as const;
 
-export const navItems = [
+export const featureFlags = {
+  blogEnabled: false
+} as const;
+
+const allNavItems = [
   { label: 'Servicios', href: '/services' },
   { label: 'Sobre mí', href: '/about' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contacto', href: '/contact' }
 ] as const;
+
+export const navItems = allNavItems.filter((item) => featureFlags.blogEnabled || item.href !== '/blog');
 
 export const services = [
   {

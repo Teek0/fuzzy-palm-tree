@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import { featureFlags } from '@/content/site';
 import { getPost, getPosts, portableTextToHtml } from '@/lib/sanity';
 
 export async function getStaticPaths() {
+  if (!featureFlags.blogEnabled) return [];
+
   const posts = await getPosts();
   return posts.map((post) => ({ params: { slug: post.slug } }));
 }

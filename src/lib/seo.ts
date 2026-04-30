@@ -6,6 +6,7 @@ export type SeoProps = {
   path?: string;
   image?: string;
   type?: 'website' | 'article';
+  noindex?: boolean;
 };
 
 export function absoluteUrl(path = '/') {
@@ -23,6 +24,7 @@ export function localBusinessSchema() {
     name: business.name,
     legalName: business.legalName,
     url: business.siteUrl,
+    image: `${business.siteUrl}/og-image.svg`,
     telephone: business.phone,
     email: business.email,
     address: {
@@ -43,6 +45,30 @@ export function localBusinessSchema() {
         closes: '18:00'
       }
     ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: business.phone,
+      contactType: 'customer service',
+      availableLanguage: ['Spanish']
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios contables',
+      itemListElement: [
+        'Constitución de empresa',
+        'Declaración de impuestos',
+        'Contabilidad mensual',
+        'Facturación y boletas',
+        'Asesoría tributaria',
+        'Remuneraciones'
+      ].map((name) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name
+        }
+      }))
+    },
     priceRange: '$$',
     sameAs: []
   };

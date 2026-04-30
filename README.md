@@ -95,7 +95,7 @@ npm run preview
 
 ## Contenido de ejemplo
 
-El blog muestra dos artículos de ejemplo hasta configurar Sanity. Elimina o edita `samplePosts` en `src/lib/sanity.ts` cuando exista contenido real en el CMS.
+El blog está desactivado temporalmente con `featureFlags.blogEnabled = false` en `src/content/site.ts`. Mientras esté apagado, `/blog` redirige a `/services` y los posts no se generan. Activa el flag cuando exista contenido real en Sanity.
 
 El retrato es un SVG de referencia en `src/assets/accountant-placeholder.svg`. Reemplázalo por una foto profesional real cuando esté disponible.
 

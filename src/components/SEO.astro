@@ -6,8 +6,9 @@ const {
   title,
   description,
   path = '/',
-  image = '/og-image.jpg',
-  type = 'website'
+  image = '/og-image.svg',
+  type = 'website',
+  noindex = false
 } = Astro.props as SeoProps;
 
 const fullTitle = pageTitle(title);
@@ -19,7 +20,7 @@ const schema = localBusinessSchema();
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
 <meta property="og:type" content={type} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />

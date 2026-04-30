@@ -1,12 +1,13 @@
 import type { APIRoute } from 'astro';
-import { business } from '@/content/site';
+import { business, featureFlags } from '@/content/site';
 import { getPosts } from '@/lib/sanity';
 
 export const GET: APIRoute = async () => {
-  const staticPages = ['/', '/services', '/about', '/blog', '/contact'];
-  const posts = await getPosts();
+  const staticPages = ['/', '/services', '/about', '/contact'];
+  const posts = featureFlags.blogEnabled ? await getPosts() : [];
+  const blogPages = featureFlags.blogEnabled ? ['/blog'] : [];
   const urls = [
-    ...staticPages.map((path) => `${business.siteUrl}${path}`),
+    ...staticPages.concat(blogPages).map((path) => `${business.siteUrl}${path}`),
     ...posts.map((post) => `${business.siteUrl}/blog/${post.slug}`)
   ];
 

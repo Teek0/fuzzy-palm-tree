@@ -11,8 +11,3 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-
-[[redirects]]
-  from = "/whatsapp"
-  to = "https://wa.me/56912345678?text=Hola%2C%20quiero%20cotizar%20servicios%20contables%20para%20mi%20negocio."
-  status = 302
