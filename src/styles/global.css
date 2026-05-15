@@ -6,16 +6,44 @@
   color-scheme: light;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
   background: #f8fafc;
   color: #17324a;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+main,
+section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -28,7 +56,7 @@ a {
   outline-offset: 3px;
 }
 
-[data-reveal] {
+.js-reveal [data-reveal] {
   opacity: 0;
   transform: translateY(18px);
   transition:
@@ -36,24 +64,24 @@ a {
     transform 520ms ease;
 }
 
-[data-reveal]:not(.is-visible) {
+.js-reveal [data-reveal]:not(.is-visible) {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-[data-reveal='left'] {
+.js-reveal [data-reveal='left'] {
   transform: translateX(-18px);
 }
 
-[data-reveal='right'] {
+.js-reveal [data-reveal='right'] {
   transform: translateX(18px);
 }
 
-[data-reveal].is-visible:not(:hover) {
+.js-reveal [data-reveal].is-visible:not(:hover) {
   opacity: 1;
   transform: translate(0, 0);
 }
 
-[data-reveal].is-visible {
+.js-reveal [data-reveal].is-visible {
   opacity: 1;
 }
 
@@ -100,7 +128,7 @@ a {
     scroll-behavior: auto;
   }
 
-  [data-reveal] {
+  .js-reveal [data-reveal] {
     opacity: 1;
     transform: none;
     transition: none;

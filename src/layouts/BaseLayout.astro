@@ -25,8 +25,9 @@ const seo = Astro.props.seo as SeoProps;
     </main>
     <Footer />
     <FloatingWhatsApp />
-    <script>
-      const revealItems = document.querySelectorAll<HTMLElement>('[data-reveal]');
+    <script is:inline>
+      const revealItems = document.querySelectorAll('[data-reveal]');
+      document.documentElement.classList.add('js-reveal');
 
       if ('IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver(
@@ -44,6 +45,10 @@ const seo = Astro.props.seo as SeoProps;
       } else {
         revealItems.forEach((item) => item.classList.add('is-visible'));
       }
+
+      window.setTimeout(() => {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+      }, 900);
     </script>
   </body>
 </html>

@@ -59,16 +59,16 @@ import { faqs } from '@/content/site';
   }
 </style>
 
-<script>
-  const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
+<script is:inline>
+  const faqItems = document.querySelectorAll('.faq-item');
 
   faqItems.forEach((item) => {
-    const trigger = item.querySelector<HTMLButtonElement>('.faq-trigger');
+    const trigger = item.querySelector('.faq-trigger');
 
     trigger?.addEventListener('click', () => {
       const isOpen = item.dataset.open === 'true';
       faqItems.forEach((otherItem) => {
-        const otherTrigger = otherItem.querySelector<HTMLButtonElement>('.faq-trigger');
+        const otherTrigger = otherItem.querySelector('.faq-trigger');
         otherItem.dataset.open = 'false';
         otherTrigger?.setAttribute('aria-expanded', 'false');
       });
