@@ -1,17 +1,17 @@
 export const business = {
-  name: 'Contabilidad Clara Santiago',
-  legalName: 'Contabilidad Clara Santiago',
+  name: 'Gestión Contable y Financiera',
+  legalName: 'Gestión Contable y Financiera',
   city: 'Santiago',
   region: 'Región Metropolitana',
   country: 'CL',
   phone: '+56 9 1234 5678',
   whatsapp: '56912345678',
-  email: 'contacto@contabilidadclara.cl',
+  email: 'contacto@gestionfinanciera.cl',
   address: 'Santiago, Región Metropolitana, Chile',
   hours: 'Lunes a viernes, 09:00 a 18:00',
   siteUrl: import.meta.env.PUBLIC_SITE_URL || 'https://contador-santiago.netlify.app',
   defaultWhatsAppMessage:
-    'Hola, quiero cotizar servicios contables para mi negocio en Santiago.'
+    'Hola, quiero una evaluación contable y financiera para mi negocio.'
 } as const;
 
 export const featureFlags = {
@@ -29,53 +29,53 @@ export const navItems = allNavItems.filter((item) => featureFlags.blogEnabled ||
 
 export const services = [
   {
-    title: 'Constitución de empresa',
+    title: 'Personas naturales',
     description:
-      'Acompañamiento para iniciar actividades en Chile con pasos claros, documentos requeridos y primeras obligaciones tributarias.'
+      'Apoyo en declaraciones de impuestos, orden financiero y orientación tributaria clara para tomar mejores decisiones.'
   },
   {
-    title: 'Declaración de impuestos',
+    title: 'Pymes y MIPYMES',
     description:
-      'Apoyo tributario mensual y anual para emprendedores y pymes, con revisión ordenada antes de presentar.'
+      'Acompañamiento para empresas de 0 a 400 trabajadores que necesitan ordenar su administración y mejorar resultados.'
   },
   {
-    title: 'Contabilidad mensual',
+    title: 'Declaraciones de impuestos',
     description:
-      'Registro contable, conciliaciones, control del calendario tributario y reportes mensuales para decidir mejor.'
+      'Revisión y apoyo en obligaciones tributarias mensuales y anuales, con foco en cumplimiento y claridad.'
   },
   {
-    title: 'Facturación y boletas',
+    title: 'Cuentas por cobrar y pagar',
     description:
-      'Soporte con facturas electrónicas, boletas, documentos de compra y procesos prácticos ante el SII.'
+      'Análisis de cobros, pagos, compromisos pendientes y alertas para mejorar el flujo de caja.'
   },
   {
-    title: 'Asesoría tributaria',
+    title: 'Informes semanales',
     description:
-      'Orientación tributaria en lenguaje claro para crecimiento, contratación, flujo de caja y cumplimiento en Chile.'
+      'Reportes claros del estado financiero, resultados y puntos estratégicos para gestionar con información actualizada.'
   },
   {
-    title: 'Remuneraciones',
+    title: 'Diagnóstico inicial',
     description:
-      'Cálculo de sueldos, documentación laboral, descuentos y obligaciones mensuales para equipos pequeños.'
+      'Evaluación contable y financiera de compras, ventas, costos, rentabilidad y procesos administrativos.'
   }
 ] as const;
 
 export const differentiators = [
   {
     title: 'Atención personalizada',
-    description: 'Atención directa de una contadora independiente que entiende el contexto de tu negocio.'
+    description: 'Trabajo cercano, híbrido y presencial según las necesidades reales de cada cliente.'
   },
   {
-    title: 'Comunicación clara',
-    description: 'Contabilidad explicada en simple, con próximos pasos concretos y sin tecnicismos innecesarios.'
+    title: 'Enfoque financiero',
+    description: 'Análisis de flujo de caja, costos, rentabilidad y administración para mejorar resultados.'
   },
   {
-    title: 'Respuesta rápida',
-    description: 'Comunicación por WhatsApp para dudas urgentes, vencimientos y solicitudes de documentos.'
+    title: 'Informes semanales',
+    description: 'Información simple y frecuente para que los dueños sepan qué está pasando en su negocio.'
   },
   {
-    title: 'Enfoque pyme',
-    description: 'Servicio pensado para emprendedores, prestadores de servicios y pequeñas empresas en Chile.'
+    title: 'Valores competitivos',
+    description: 'Servicios con valores bajo el mercado, pensados para personas naturales y MIPYMES.'
   }
 ] as const;
 
@@ -84,42 +84,42 @@ export const testimonials = [
     name: 'María Fernanda R.',
     role: 'Dueña de estudio de diseño',
     quote:
-      'El proceso se volvió mucho más claro. Por fin entendí qué documentos necesitaba y cuándo importaba cada vencimiento.'
+      'Ahora tenemos claridad sobre costos, pagos pendientes y decisiones que antes se tomaban a ciegas.'
   },
   {
     name: 'Cristóbal V.',
     role: 'Consultor independiente',
     quote:
-      'Respuestas rápidas, seguimiento ordenado y consejos muy prácticos para mi contabilidad mensual.'
+      'La evaluación inicial permitió detectar desorden administrativo y priorizar mejoras concretas.'
   },
   {
     name: 'Paula G.',
     role: 'Emprendedora comercial',
     quote:
-      'Profesional, cercana y confiable. El apoyo con facturación e impuestos mensuales nos ahorró mucho tiempo.'
+      'Los informes semanales nos ayudaron a revisar cobranza, pagos y resultados con mucha más tranquilidad.'
   }
 ] as const;
 
 export const faqs = [
   {
-    question: '¿Trabajas con emprendedores fuera de Santiago?',
+    question: '¿El servicio es presencial o remoto?',
     answer:
-      'Sí. La mayoría de los procesos contables y tributarios se pueden gestionar de forma remota en Chile, con reuniones y revisión de documentos en línea.'
+      'El servicio es híbrido y presencial. La modalidad se define según el tipo de apoyo, ubicación y necesidades de cada cliente.'
   },
   {
-    question: '¿Me puedes ayudar a iniciar una empresa en Chile?',
+    question: '¿Con qué tipo de empresas trabajas?',
     answer:
-      'Sí. El servicio incluye orientación sobre constitución, inicio de actividades, facturación básica y primeros pasos de cumplimiento.'
+      'Trabajo con personas naturales, pymes y MIPYMES de 0 a 400 trabajadores que necesitan ordenar su administración y gestión financiera.'
   },
   {
-    question: '¿Qué información necesito para cotizar?',
+    question: '¿Qué incluye la evaluación inicial?',
     answer:
-      'Comparte el giro de tu negocio, volumen mensual aproximado de documentos, si tienes trabajadores y tu situación tributaria actual.'
+      'Incluye revisión de compras, ventas, cuentas por cobrar y pagar, costos, flujo de caja, rentabilidad y procesos administrativos.'
   },
   {
-    question: '¿Esto reemplaza una asesoría legal?',
+    question: '¿Los valores son accesibles?',
     answer:
-      'No. La orientación contable y tributaria se entrega dentro del ámbito profesional contable. Los temas legales deben revisarse con un abogado.'
+      'Sí. La propuesta considera valores competitivos y bajo el mercado para facilitar el acceso a apoyo contable y financiero.'
   }
 ] as const;
 

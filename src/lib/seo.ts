@@ -53,14 +53,14 @@ export function localBusinessSchema() {
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Servicios contables',
+      name: 'Servicios contables y financieros',
       itemListElement: [
-        'Constitución de empresa',
+        'Personas naturales',
+        'Pymes y MIPYMES',
         'Declaración de impuestos',
-        'Contabilidad mensual',
-        'Facturación y boletas',
-        'Asesoría tributaria',
-        'Remuneraciones'
+        'Cuentas por cobrar y pagar',
+        'Informes semanales',
+        'Diagnóstico contable y financiero'
       ].map((name) => ({
         '@type': 'Offer',
         itemOffered: {
