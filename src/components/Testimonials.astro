@@ -5,13 +5,13 @@ import { testimonials } from '@/content/site';
 
 <section class="bg-white">
   <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="max-w-2xl">
+    <div class="max-w-2xl" data-reveal>
       <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Confianza</p>
       <h2 class="mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">Claridad para dueños que necesitan gestionar mejor</h2>
     </div>
     <div class="mt-10 grid gap-5 md:grid-cols-3">
-      {testimonials.map((item) => (
-        <figure class="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm">
+      {testimonials.map((item, index) => (
+        <figure class="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-copper-100 hover:shadow-soft" data-reveal style={`--reveal-delay: ${index * 80}ms`}>
           <Quote class="text-copper-500" size={26} aria-hidden="true" />
           <blockquote class="mt-5 leading-7 text-slate-700">{item.quote}</blockquote>
           <figcaption class="mt-6 border-t border-slate-200 pt-5">

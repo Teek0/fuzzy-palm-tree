@@ -8,7 +8,7 @@ import {
   UserRound
 } from '@lucide/astro';
 
-const { title, description } = Astro.props;
+const { title, description, delay = 0 } = Astro.props;
 
 const icons = {
   'Personas naturales': UserRound,
@@ -22,8 +22,8 @@ const icons = {
 const Icon = icons[title as keyof typeof icons] ?? ClipboardCheck;
 ---
 
-<article class="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-copper-100 hover:shadow-soft">
-  <div class="grid h-11 w-11 place-items-center rounded-lg bg-sage-50 text-sage-700 group-hover:bg-copper-50 group-hover:text-copper-700">
+<article class="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-copper-100 hover:shadow-soft" data-reveal style={`--reveal-delay: ${delay}ms`}>
+  <div class="grid h-11 w-11 place-items-center rounded-lg bg-sage-50 text-sage-700 transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-copper-50 group-hover:text-copper-700">
     <Icon size={24} aria-hidden="true" />
   </div>
   <h3 class="mt-5 text-xl font-bold text-navy-900">{title}</h3>

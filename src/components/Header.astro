@@ -16,7 +16,7 @@ import { business, navItems, whatsappUrl } from '@/content/site';
         <a class="text-sm font-medium text-navy-100 no-underline hover:text-white" href={item.href}>{item.label}</a>
       ))}
       <a
-        class="rounded-lg bg-sage-500 px-4 py-2.5 text-sm font-semibold text-white no-underline hover:bg-sage-600"
+        class="whatsapp-motion inline-flex rounded-lg bg-sage-500 px-4 py-2.5 text-sm font-semibold text-white no-underline hover:bg-sage-600"
         href={whatsappUrl()}
         target="_blank"
         rel="noopener noreferrer"
@@ -33,7 +33,7 @@ import { business, navItems, whatsappUrl } from '@/content/site';
         {navItems.map((item) => (
           <a class="block rounded-md px-3 py-2 text-sm font-medium text-navy-100 no-underline hover:bg-navy-800 hover:text-white" href={item.href}>{item.label}</a>
         ))}
-        <a class="mt-2 block rounded-md bg-sage-500 px-3 py-2 text-sm font-semibold text-white no-underline hover:bg-sage-600" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="whatsapp-motion mt-2 flex rounded-md bg-sage-500 px-3 py-2 text-sm font-semibold text-white no-underline hover:bg-sage-600" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </div>
     </details>
   </nav>
