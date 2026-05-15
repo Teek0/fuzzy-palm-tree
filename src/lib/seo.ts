@@ -59,7 +59,7 @@ export function localBusinessSchema() {
         'Pymes y MIPYMES',
         'Declaración de impuestos',
         'Cuentas por cobrar y pagar',
-        'Informes semanales',
+        'Informes financieros',
         'Diagnóstico contable y financiero'
       ].map((name) => ({
         '@type': 'Offer',

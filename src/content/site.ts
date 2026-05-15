@@ -49,9 +49,9 @@ export const services = [
       'Análisis de cobros, pagos, compromisos pendientes y alertas para mejorar el flujo de caja.'
   },
   {
-    title: 'Informes semanales',
+    title: 'Informes financieros',
     description:
-      'Reportes claros del estado financiero, resultados y puntos estratégicos para gestionar con información actualizada.'
+      'Reportes claros del estado financiero, resultados y puntos estratégicos para gestionar con mejor información.'
   },
   {
     title: 'Diagnóstico inicial',
@@ -70,8 +70,8 @@ export const differentiators = [
     description: 'Análisis de flujo de caja, costos, rentabilidad y administración para mejorar resultados.'
   },
   {
-    title: 'Informes semanales',
-    description: 'Información simple y frecuente para que los dueños sepan qué está pasando en su negocio.'
+    title: 'Informes claros',
+    description: 'Información simple y clara para que los dueños sepan qué está pasando en su negocio.'
   },
   {
     title: 'Valores competitivos',
@@ -96,7 +96,7 @@ export const testimonials = [
     name: 'Paula G.',
     role: 'Emprendedora comercial',
     quote:
-      'Los informes semanales nos ayudaron a revisar cobranza, pagos y resultados con mucha más tranquilidad.'
+      'Los informes nos ayudaron a revisar cobranza, pagos y resultados con mucha más tranquilidad.'
   }
 ] as const;
 

@@ -1,17 +1,17 @@
 ---
-import { ArrowRight, MessageCircle } from '@lucide/astro';
+import { ArrowRight, BarChart3, MessageCircle, TrendingUp, Users } from '@lucide/astro';
 import { business, whatsappUrl } from '@/content/site';
 ---
 
 <section class="bg-white">
-  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.12fr_0.88fr] md:items-center lg:px-8 lg:py-24">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center lg:px-8 lg:py-24">
     <div>
       <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Apoyo contable y financiero</p>
       <h1 class="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-normal text-navy-900 sm:text-5xl lg:text-6xl">
         Ordena tu administración y mejora los resultados de tu negocio
       </h1>
       <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-        Apoyo personalizado para personas naturales, pymes y MIPYMES en declaraciones de impuestos, flujo de caja, cuentas por cobrar y pagar, informes semanales y diagnóstico financiero inicial.
+        Apoyo personalizado para personas naturales, pymes y MIPYMES en declaraciones de impuestos, flujo de caja, cuentas por cobrar y pagar, informes financieros y diagnóstico inicial.
       </p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <a
@@ -32,17 +32,31 @@ import { business, whatsappUrl } from '@/content/site';
         </a>
       </div>
     </div>
-    <div class="rounded-lg border border-slate-200 bg-navy-900 p-6 text-white shadow-soft">
-      <div class="rounded-lg bg-white p-6 text-navy-900">
-        <p class="text-sm font-semibold text-sage-700">Modalidad híbrida y presencial</p>
-        <p class="mt-4 text-2xl font-bold">Evaluación inicial para detectar puntos débiles y proponer mejoras concretas.</p>
-        <div class="mt-6 grid gap-4 text-sm text-slate-600">
-          <p><strong class="text-navy-900">Ubicación:</strong> {business.city}, Chile</p>
-          <p><strong class="text-navy-900">Horario:</strong> {business.hours}</p>
-          <p><strong class="text-navy-900">Ideal para:</strong> personas naturales, pymes y MIPYMES de 0 a 400 trabajadores.</p>
-          <p><strong class="text-navy-900">Valores:</strong> competitivos y bajo el mercado.</p>
+
+    <div class="grid gap-4">
+      <div class="rounded-lg border border-navy-800 bg-navy-900 p-7 text-white shadow-soft">
+        <BarChart3 class="text-copper-100" size={32} aria-hidden="true" />
+        <p class="mt-6 text-sm font-semibold uppercase tracking-wide text-copper-100">Diagnóstico inicial</p>
+        <h2 class="mt-3 text-2xl font-bold tracking-normal">Detecta puntos débiles y prioriza mejoras concretas.</h2>
+        <p class="mt-4 leading-7 text-navy-100">
+          Revisión de compras, ventas, costos, flujo de caja, cobranza, pagos y rentabilidad.
+        </p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-slate-200 bg-slate-50 p-5">
+          <Users class="text-sage-600" size={24} aria-hidden="true" />
+          <p class="mt-4 text-2xl font-bold text-navy-900">0-400</p>
+          <p class="mt-1 text-sm leading-6 text-slate-600">Trabajadores en empresas MIPYME.</p>
+        </div>
+        <div class="rounded-lg border border-slate-200 bg-copper-50 p-5">
+          <TrendingUp class="text-copper-600" size={24} aria-hidden="true" />
+          <p class="mt-4 text-2xl font-bold text-navy-900">Informes</p>
+          <p class="mt-1 text-sm leading-6 text-slate-600">Reportes financieros y estratégicos.</p>
         </div>
       </div>
+      <p class="text-sm leading-6 text-slate-500">
+        Atención en {business.city}, modalidad híbrida o presencial y valores competitivos.
+      </p>
     </div>
   </div>
 </section>
