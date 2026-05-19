@@ -2,8 +2,6 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
-import AboutPreview from '@/components/AboutPreview.astro';
-import Testimonials from '@/components/Testimonials.astro';
 import FAQAccordion from '@/components/FAQAccordion.astro';
 import FinalCTA from '@/components/FinalCTA.astro';
 import { differentiators, services } from '@/content/site';
@@ -50,8 +48,6 @@ const processSteps = [
       </div>
     </div>
   </section>
-
-  <AboutPreview />
 
   <section class="bg-navy-900">
     <div class="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 md:grid-cols-[0.9fr_1.1fr] md:items-center lg:px-8">
@@ -110,7 +106,6 @@ const processSteps = [
     </div>
   </section>
 
-  <Testimonials />
   <FAQAccordion />
   <FinalCTA />
 </BaseLayout>
