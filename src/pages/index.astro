@@ -1,4 +1,5 @@
 ---
+import { ArrowRight, CircleCheck, SearchCheck } from '@lucide/astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
@@ -11,37 +12,39 @@ const diagnosticAreas = ['Compras', 'Ventas', 'Cobranza', 'Pagos', 'Costos', 'Fl
 const processSteps = [
   {
     number: '01',
-    title: 'Evaluación inicial',
-    description: 'Se revisa la situación contable, administrativa y financiera del negocio.'
+    title: 'Me cuentas qué está pasando',
+    description: 'Partimos con una revisión clara de tu situación contable, administrativa y financiera.'
   },
   {
     number: '02',
-    title: 'Puntos críticos',
-    description: 'Se identifican desordenes, fugas de costos y oportunidades de mejora.'
+    title: 'Ordenamos lo importante',
+    description: 'Identificamos desórdenes, fugas de costos y puntos que necesitan atención primero.'
   },
   {
     number: '03',
-    title: 'Plan de acción',
-    description: 'Recibes prioridades concretas, seguimiento e informes para gestionar mejor.'
+    title: 'Avanzamos con claridad',
+    description: 'Recibes prioridades concretas, seguimiento e información simple para decidir mejor.'
   }
 ];
 ---
 
 <BaseLayout
   seo={{
-    title: 'Apoyo contable y financiero para MIPYMES',
+    title: 'Contadora en Santiago para Pymes y MIPYMES',
     description:
-      'Apoyo contable, administrativo y financiero para personas naturales, pymes y MIPYMES: impuestos, flujo de caja, cuentas por cobrar y pagar, informes financieros y diagnóstico inicial.',
+      'Rosario Contable ofrece apoyo contable y financiero en Santiago para personas naturales, pymes y MIPYMES: impuestos, flujo de caja, cuentas por cobrar y diagnóstico inicial.',
     path: '/'
   }}
 >
   <Hero />
 
-  <section class="bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+  <section class="bg-copper-50/55">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="max-w-2xl" data-reveal>
-        <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Servicios</p>
-        <h2 class="mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">Servicios para ordenar, controlar y decidir mejor</h2>
+        <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Cómo puedo ayudarte</p>
+        <h2 class="font-display mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">
+          Apoyo contable para sentir más orden y menos presión
+        </h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => <ServiceCard {...service} delay={index * 70} />)}
@@ -49,59 +52,89 @@ const processSteps = [
     </div>
   </section>
 
-  <section class="bg-navy-900">
-    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:px-6 md:grid-cols-[0.9fr_1.1fr] md:items-center lg:px-8">
-      <div data-reveal="left">
-        <p class="text-sm font-semibold uppercase tracking-wide text-copper-100">Diagnóstico inicial</p>
-        <h2 class="mt-3 text-3xl font-bold tracking-normal text-white sm:text-4xl">Detectar puntos débiles antes de proponer mejoras</h2>
-        <p class="mt-5 leading-8 text-navy-100">
-          Una revisión clara para saber dónde se pierde control, dinero o tiempo dentro de la empresa.
-        </p>
+  <section class="bg-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
+      <div class="relative" data-reveal="left">
+        <img
+          src="/images/financial-analysis.jpg"
+          alt="Revisión de documentos financieros y contables"
+          class="aspect-[4/3] w-full rounded-2xl object-cover shadow-[0_24px_60px_rgba(13,41,65,0.13)]"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="absolute -bottom-5 left-5 rounded-xl bg-navy-900 p-4 text-white shadow-soft">
+          <SearchCheck class="text-copper-100" size={28} aria-hidden="true" />
+          <p class="mt-2 text-sm font-semibold">Evaluación inicial</p>
+        </div>
       </div>
-      <div class="grid gap-5" data-reveal="right" style="--reveal-delay: 120ms">
-        <div class="flex flex-wrap gap-3">
+      <div data-reveal="right" style="--reveal-delay: 120ms">
+        <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Primero entendamos tu situación</p>
+        <h2 class="font-display mt-3 text-3xl font-bold tracking-normal text-navy-900 sm:text-4xl">
+          Revisamos qué está desordenado y por dónde conviene partir
+        </h2>
+        <p class="mt-5 leading-8 text-slate-700">
+          La idea es mirar tus números sin enredos y encontrar qué necesita orden, seguimiento o mejora.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
           {diagnosticAreas.map((area, index) => (
-            <span class="rounded-full border border-navy-700 bg-navy-800 px-4 py-2 text-sm font-semibold text-navy-50 transition duration-300 hover:-translate-y-0.5 hover:border-copper-100" data-reveal style={`--reveal-delay: ${index * 45}ms`}>{area}</span>
+            <span class="rounded-full border border-slate-200 bg-copper-50 px-4 py-2 text-sm font-semibold text-navy-900 transition duration-300 hover:-translate-y-0.5 hover:border-sage-200 hover:bg-sage-50" data-reveal style={`--reveal-delay: ${index * 45}ms`}>{area}</span>
           ))}
         </div>
-        <p class="leading-8 text-navy-100">
-          Con ese diagnóstico se proponen acciones concretas para ordenar procesos administrativos, optimizar costos y fortalecer los resultados del negocio.
+        <p class="mt-6 leading-8 text-slate-700">
+          Con esa revisión se proponen acciones concretas para ordenar procesos, cuidar costos y tomar mejores decisiones.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="bg-white">
-    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+  <section class="bg-navy-900">
+    <div class="mx-auto max-w-7xl px-4 py-16 text-white sm:px-6 lg:px-8">
       <div class="max-w-2xl" data-reveal>
-        <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Cómo trabajamos</p>
-        <h2 class="mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">Un proceso simple para pasar del desorden a la acción</h2>
+        <p class="text-sm font-semibold uppercase tracking-wide text-copper-100">Cómo trabajamos</p>
+        <h2 class="font-display mt-3 text-3xl font-bold tracking-normal sm:text-4xl">
+          Un proceso simple, claro y sin vueltas
+        </h2>
       </div>
-      <div class="mt-10 grid gap-5 md:grid-cols-3">
+      <div class="relative mt-12 grid gap-8 md:grid-cols-3">
+        <div class="absolute left-0 right-0 top-7 hidden h-px bg-white/20 md:block"></div>
         {processSteps.map((step, index) => (
-          <article class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:shadow-soft" data-reveal style={`--reveal-delay: ${index * 90}ms`}>
-            <p class="text-sm font-bold text-copper-600">{step.number}</p>
-            <h3 class="mt-4 text-xl font-bold text-navy-900">{step.title}</h3>
-            <p class="mt-3 leading-7 text-slate-600">{step.description}</p>
+          <article class="relative" data-reveal style={`--reveal-delay: ${index * 90}ms`}>
+            <div class="grid h-14 w-14 place-items-center rounded-full border border-white/25 bg-navy-800 text-lg font-extrabold text-copper-100 shadow-soft">
+              {step.number}
+            </div>
+            <h3 class="mt-6 text-xl font-bold text-white">{step.title}</h3>
+            <p class="mt-3 leading-7 text-navy-100">{step.description}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="max-w-2xl" data-reveal>
-        <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Por qué elegir este servicio</p>
-        <h2 class="mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">Acompañamiento claro, personalizado y orientado a resultados</h2>
-      </div>
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {differentiators.map((item, index) => (
-          <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-copper-100 hover:shadow-soft" data-reveal style={`--reveal-delay: ${index * 70}ms`}>
-            <h3 class="text-lg font-bold text-navy-900">{item.title}</h3>
-            <p class="mt-3 leading-7 text-slate-600">{item.description}</p>
-          </article>
-        ))}
+  <section class="bg-copper-50/55">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Por qué trabajar conmigo</p>
+          <h2 class="font-display mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">
+            Experiencia, cercanía y números explicados en simple
+          </h2>
+          <a
+            href="/about"
+            class="mt-7 inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-navy-900 no-underline shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-soft"
+          >
+            Conoce más
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          {differentiators.map((item, index) => (
+            <article class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sage-200 hover:shadow-soft" data-reveal style={`--reveal-delay: ${index * 70}ms`}>
+              <CircleCheck class="text-sage-500" size={22} aria-hidden="true" />
+              <h3 class="mt-4 text-lg font-bold text-navy-900">{item.title}</h3>
+              <p class="mt-3 leading-7 text-slate-600">{item.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   </section>

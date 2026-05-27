@@ -1,17 +1,18 @@
 export const business = {
-  name: 'Gestión Contable y Financiera',
-  legalName: 'Gestión Contable y Financiera',
+  name: 'Rosario Contable',
+  legalName: 'Rosario Trincado',
   city: 'Santiago',
   region: 'Región Metropolitana',
   country: 'CL',
-  phone: '+56 9 1234 5678',
-  whatsapp: '56912345678',
-  email: 'contacto@gestionfinanciera.cl',
+  phone: '+56 9 0000 0000',
+  whatsapp: '56900000000',
+  email: 'contacto.rcontable@gmail.com',
   address: 'Santiago, Región Metropolitana, Chile',
   hours: 'Lunes a viernes, 09:00 a 18:00',
-  siteUrl: import.meta.env.PUBLIC_SITE_URL || 'https://contador-santiago.netlify.app',
+  siteUrl: import.meta.env.PUBLIC_SITE_URL || 'https://rosariocontable.cl',
+  yearsExperience: '40+',
   defaultWhatsAppMessage:
-    'Hola, quiero una evaluación contable y financiera para mi negocio.'
+    'Hola Rosario, quiero consultar por apoyo contable y financiero para mi negocio.'
 } as const;
 
 export const featureFlags = {
@@ -22,7 +23,7 @@ const allNavItems = [
   { label: 'Servicios', href: '/services' },
   { label: 'Sobre mí', href: '/about' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Contacto', href: '/contact' }
+  { label: 'Hablemos', href: '/contact' }
 ] as const;
 
 export const navItems = allNavItems.filter((item) => featureFlags.blogEnabled || item.href !== '/blog');
@@ -36,7 +37,7 @@ export const services = [
   {
     title: 'Pymes y MIPYMES',
     description:
-      'Acompañamiento para empresas de 0 a 400 trabajadores que necesitan ordenar su administración y mejorar resultados.'
+      'Acompañamiento experto para empresas de 0 a 400 trabajadores que necesitan ordenar su administración y mejorar resultados.'
   },
   {
     title: 'Declaraciones de impuestos',
@@ -63,7 +64,7 @@ export const services = [
 export const differentiators = [
   {
     title: 'Atención personalizada',
-    description: 'Trabajo cercano, híbrido y presencial según las necesidades reales de cada cliente.'
+    description: 'Trabajo cercano, híbrido y presencial según lo que necesites resolver.'
   },
   {
     title: 'Enfoque financiero',
@@ -71,7 +72,7 @@ export const differentiators = [
   },
   {
     title: 'Informes claros',
-    description: 'Información simple y clara para que los dueños sepan qué está pasando en su negocio.'
+    description: 'Información simple para entender qué está pasando y decidir con más tranquilidad.'
   },
   {
     title: 'Valores competitivos',
@@ -124,5 +125,9 @@ export const faqs = [
 ] as const;
 
 export function whatsappUrl(message = business.defaultWhatsAppMessage) {
+  if (!business.whatsapp) {
+    return `mailto:${business.email}?subject=${encodeURIComponent('Consulta por servicios contables')}&body=${encodeURIComponent(message)}`;
+  }
+
   return `https://wa.me/${business.whatsapp}?text=${encodeURIComponent(message)}`;
 }

@@ -18,14 +18,13 @@ export function pageTitle(title: string) {
 }
 
 export function localBusinessSchema() {
-  return {
+  const schema = {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'AccountingService'],
+    '@type': ['ProfessionalService', 'AccountingService'],
     name: business.name,
     legalName: business.legalName,
     url: business.siteUrl,
     image: `${business.siteUrl}/og-image.svg`,
-    telephone: business.phone,
     email: business.email,
     address: {
       '@type': 'PostalAddress',
@@ -35,6 +34,7 @@ export function localBusinessSchema() {
     },
     areaServed: [
       { '@type': 'City', name: 'Santiago' },
+      { '@type': 'AdministrativeArea', name: 'Región Metropolitana' },
       { '@type': 'Country', name: 'Chile' }
     ],
     openingHoursSpecification: [
@@ -45,12 +45,6 @@ export function localBusinessSchema() {
         closes: '18:00'
       }
     ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: business.phone,
-      contactType: 'customer service',
-      availableLanguage: ['Spanish']
-    },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Servicios contables y financieros',
@@ -72,4 +66,18 @@ export function localBusinessSchema() {
     priceRange: '$$',
     sameAs: []
   };
+
+  if (business.phone) {
+    Object.assign(schema, {
+      telephone: business.phone,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: business.phone,
+        contactType: 'customer service',
+        availableLanguage: ['Spanish']
+      }
+    });
+  }
+
+  return schema;
 }

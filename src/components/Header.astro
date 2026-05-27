@@ -1,39 +1,38 @@
 ---
-import { Calculator, Menu } from '@lucide/astro';
+import { Menu } from '@lucide/astro';
+import logo from '@/assets/rocontable_logo_no_background.svg';
 import { business, navItems, whatsappUrl } from '@/content/site';
 ---
 
-<header class="sticky top-0 z-40 border-b border-navy-800 bg-navy-900 shadow-soft">
-  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
-    <a href="/" class="flex items-center gap-3 text-white no-underline" aria-label={`Inicio de ${business.name}`}>
-      <span class="grid h-10 w-10 place-items-center rounded-lg bg-white text-navy-900">
-        <Calculator size={22} aria-hidden="true" />
-      </span>
-      <span class="text-base font-bold tracking-normal">{business.name}</span>
+<header class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Navegación principal">
+    <a href="/" class="flex items-center gap-3 text-slate-950 no-underline" aria-label={`Inicio de ${business.name}`}>
+      <img src={logo.src} alt="" class="h-10 w-10 rounded-lg" loading="eager" decoding="async" />
+      <span class="text-lg font-semibold tracking-normal">{business.name}</span>
     </a>
     <div class="hidden items-center gap-8 md:flex">
       {navItems.map((item) => (
-        <a class="text-sm font-medium text-navy-100 no-underline hover:text-white" href={item.href}>{item.label}</a>
+        <a class="text-sm font-medium text-slate-600 no-underline transition hover:text-navy-900" href={item.href}>{item.label}</a>
       ))}
       <a
-        class="whatsapp-motion inline-flex rounded-lg bg-sage-500 px-4 py-2.5 text-sm font-semibold text-white no-underline hover:bg-sage-600"
+        class="whatsapp-motion inline-flex rounded-lg bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white no-underline hover:bg-navy-800"
         href={whatsappUrl()}
         target="_blank"
         rel="noopener noreferrer"
       >
-        WhatsApp
+        Conversemos
       </a>
     </div>
     <details class="relative md:hidden">
-      <summary class="grid h-10 w-10 cursor-pointer list-none place-items-center rounded-lg border border-navy-700 text-white">
+      <summary class="grid h-10 w-10 cursor-pointer list-none place-items-center rounded-lg border border-slate-200 text-navy-900">
         <Menu size={22} aria-hidden="true" />
         <span class="sr-only">Abrir menú</span>
       </summary>
-      <div class="absolute right-0 mt-3 w-56 rounded-lg border border-navy-800 bg-navy-900 p-3 shadow-soft">
+      <div class="absolute right-0 mt-3 w-56 rounded-lg border border-slate-200 bg-white p-3 shadow-soft">
         {navItems.map((item) => (
-          <a class="block rounded-md px-3 py-2 text-sm font-medium text-navy-100 no-underline hover:bg-navy-800 hover:text-white" href={item.href}>{item.label}</a>
+          <a class="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 no-underline hover:bg-slate-50 hover:text-navy-900" href={item.href}>{item.label}</a>
         ))}
-        <a class="whatsapp-motion mt-2 flex rounded-md bg-sage-500 px-3 py-2 text-sm font-semibold text-white no-underline hover:bg-sage-600" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a class="whatsapp-motion mt-2 flex rounded-md bg-navy-900 px-3 py-2 text-sm font-semibold text-white no-underline hover:bg-navy-800" href={whatsappUrl()} target="_blank" rel="noopener noreferrer">Conversemos</a>
       </div>
     </details>
   </nav>

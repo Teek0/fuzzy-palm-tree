@@ -7,17 +7,17 @@ import { services } from '@/content/site';
 
 <BaseLayout
   seo={{
-    title: 'Servicios contables y financieros',
+    title: 'Servicios contables y financieros en Santiago',
     description:
-      'Servicios para personas naturales, pymes y MIPYMES: declaraciones de impuestos, cuentas por cobrar y pagar, informes financieros y diagnóstico contable financiero.',
+      'Servicios de Rosario Contable en Santiago para personas naturales, pymes y MIPYMES: declaraciones de impuestos, cuentas por cobrar y pagar, informes financieros y diagnóstico.',
     path: '/services'
   }}
 >
   <section class="bg-white">
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Servicios</p>
-      <h1 class="mt-4 max-w-3xl text-4xl font-bold tracking-normal text-navy-900 sm:text-5xl">Servicios para personas naturales, pymes y MIPYMES</h1>
-      <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">Apoyo personalizado para ordenar la administración, cumplir obligaciones tributarias y revisar información financiera clave para tomar mejores decisiones.</p>
+      <p class="text-sm font-medium uppercase tracking-wide text-sage-700">Servicios</p>
+      <h1 class="font-display mt-4 max-w-3xl text-4xl font-extrabold tracking-normal text-navy-900 sm:text-5xl">Apoyo contable para personas, pymes y MIPYMES</h1>
+      <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">Te ayudo a ordenar impuestos, pagos, cobranza e información financiera para que puedas trabajar con más calma y claridad.</p>
       <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => <ServiceCard {...service} />)}
       </div>
@@ -26,8 +26,8 @@ import { services } from '@/content/site';
   <section class="bg-slate-50">
     <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
-        <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Evaluación inicial</p>
-        <h2 class="mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">Un diagnóstico para saber dónde actuar primero</h2>
+        <p class="text-sm font-medium uppercase tracking-wide text-sage-700">Primero entendamos tu situación</p>
+        <h2 class="font-display mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">Una revisión clara para saber dónde actuar primero</h2>
         <p class="mt-5 leading-8 text-slate-600">
           La revisión inicial permite identificar debilidades en compras, ventas, cuentas por cobrar, cuentas por pagar, flujo de caja, control de costos y rentabilidad. Luego se priorizan mejoras concretas para ordenar procesos y mejorar resultados.
         </p>

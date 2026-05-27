@@ -24,10 +24,16 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
-  background: #f8fafc;
+  background: #ffffff;
   color: #17324a;
   font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
 main,

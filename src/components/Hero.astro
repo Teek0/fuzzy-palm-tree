@@ -1,62 +1,69 @@
 ---
-import { ArrowRight, ChartColumnBig, MessageCircle, TrendingUp, Users } from '@lucide/astro';
+import { ArrowDown, CircleCheck, MessageCircle } from '@lucide/astro';
+import accountant from '@/assets/accountant.jpg';
 import { business, whatsappUrl } from '@/content/site';
+
+const trustSignals = [
+  'Más de 40 años de experiencia',
+  'Personas, pymes y MIPYMES',
+  'Atención presencial y remota'
+];
 ---
 
-<section class="bg-white">
-  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:items-center lg:px-8 lg:py-24">
+<section class="overflow-hidden bg-white">
+  <div class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[0.92fr_1.08fr] md:items-center lg:px-8 lg:py-20 xl:gap-16">
     <div data-reveal="left">
-      <p class="text-sm font-semibold uppercase tracking-wide text-sage-700">Apoyo contable y financiero</p>
-      <h1 class="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-normal text-navy-900 sm:text-5xl lg:text-6xl">
-        Ordena tu administración y mejora los resultados de tu negocio
+      <p class="inline-flex items-center gap-2 rounded-full bg-sage-50 px-3 py-1.5 text-sm font-semibold text-sage-600">
+        <span class="h-2 w-2 rounded-full bg-sage-500"></span>
+        Servicios contables en Santiago
+      </p>
+      <h1 class="font-display mt-8 max-w-3xl text-4xl font-extrabold leading-tight tracking-normal text-slate-950 sm:text-5xl lg:text-6xl">
+        Menos estrés con tus impuestos.
+        <span class="text-navy-800">Más claridad para decidir.</span>
       </h1>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-        Apoyo personalizado para personas naturales, pymes y MIPYMES en declaraciones de impuestos, flujo de caja, cuentas por cobrar y pagar, informes financieros y diagnóstico inicial.
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+        Te ayudo a ordenar tus finanzas, entender tus números y cumplir tus obligaciones sin complicaciones.
       </p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row" data-reveal style="--reveal-delay: 120ms">
         <a
           href={whatsappUrl()}
           target="_blank"
           rel="noopener noreferrer"
-          class="whatsapp-motion inline-flex items-center justify-center gap-2 rounded-lg bg-sage-600 px-5 py-3 text-base font-semibold text-white no-underline hover:bg-sage-700"
+          class="whatsapp-motion inline-flex items-center justify-center gap-2 rounded-lg bg-navy-900 px-6 py-3 text-base font-semibold text-white no-underline shadow-sm hover:bg-navy-800"
         >
           <MessageCircle size={20} aria-hidden="true" />
-          Consultar por WhatsApp
+          Conversemos
         </a>
         <a
           href="/services"
-          class="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-200 px-5 py-3 text-base font-semibold text-navy-900 no-underline hover:bg-navy-50"
+          class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3 text-base font-semibold text-navy-900 no-underline shadow-sm transition duration-300 hover:-translate-y-1 hover:border-navy-300 hover:shadow-soft"
         >
-          Ver servicios
-          <ArrowRight size={18} aria-hidden="true" />
+          Ver cómo puedo ayudarte
+          <ArrowDown size={18} aria-hidden="true" />
         </a>
+      </div>
+      <div class="mt-10 grid gap-4 text-sm text-slate-700 sm:grid-cols-3" data-reveal style="--reveal-delay: 220ms">
+        {trustSignals.map((item) => (
+          <p class="flex items-start gap-2 leading-5">
+            <CircleCheck class="mt-0.5 shrink-0 text-sage-500" size={18} aria-hidden="true" />
+            <span>{item}</span>
+          </p>
+        ))}
       </div>
     </div>
 
-    <div class="grid gap-4" data-reveal="right" style="--reveal-delay: 140ms">
-      <div class="rounded-lg border border-navy-800 bg-navy-900 p-7 text-white shadow-soft transition duration-300 hover:-translate-y-1">
-        <ChartColumnBig class="text-copper-100" size={32} aria-hidden="true" />
-        <p class="mt-6 text-sm font-semibold uppercase tracking-wide text-copper-100">Diagnóstico inicial</p>
-        <h2 class="mt-3 text-2xl font-bold tracking-normal">Detecta puntos débiles y prioriza mejoras concretas.</h2>
-        <p class="mt-4 leading-7 text-navy-100">
-          Revisión de compras, ventas, costos, flujo de caja, cobranza, pagos y rentabilidad.
-        </p>
+    <div class="relative pb-8" data-reveal="right" style="--reveal-delay: 140ms">
+      <img
+        src={accountant.src}
+        alt={`Retrato profesional de ${business.legalName}`}
+        class="mx-auto w-full rounded-2xl shadow-[0_28px_70px_rgba(13,41,65,0.18)] md:w-[70%]"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="absolute bottom-0 left-6 max-w-[230px] rounded-xl border border-slate-200 bg-white/95 p-4 shadow-soft backdrop-blur">
+        <p class="text-3xl font-extrabold text-navy-900">{business.yearsExperience}</p>
+        <p class="mt-1 text-sm leading-6 text-slate-600">Años acompañando administración, contabilidad y finanzas.</p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-lg border border-slate-200 bg-slate-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
-          <Users class="text-sage-600" size={24} aria-hidden="true" />
-          <p class="mt-4 text-2xl font-bold text-navy-900">0-400</p>
-          <p class="mt-1 text-sm leading-6 text-slate-600">Trabajadores en empresas MIPYME.</p>
-        </div>
-        <div class="rounded-lg border border-slate-200 bg-copper-50 p-5 transition duration-300 hover:-translate-y-1 hover:shadow-soft">
-          <TrendingUp class="text-copper-600" size={24} aria-hidden="true" />
-          <p class="mt-4 text-2xl font-bold text-navy-900">Informes</p>
-          <p class="mt-1 text-sm leading-6 text-slate-600">Reportes financieros y estratégicos.</p>
-        </div>
-      </div>
-      <p class="text-sm leading-6 text-slate-500">
-        Atención en {business.city}, modalidad híbrida o presencial y valores competitivos.
-      </p>
     </div>
   </div>
 </section>

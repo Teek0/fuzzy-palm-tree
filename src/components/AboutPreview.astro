@@ -1,6 +1,6 @@
 ---
 import { Building2, ChartNoAxesCombined, ClipboardCheck } from '@lucide/astro';
-import placeholder from '@/assets/accountant-placeholder.svg';
+import aboutImage from '@/assets/sobre-mi.jpg';
 
 const strengths = [
   { icon: Building2, label: 'Administración' },
@@ -12,7 +12,7 @@ const strengths = [
 <section class="bg-white">
   <div class="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-[0.85fr_1.15fr] md:items-center lg:px-8">
     <div data-reveal="left">
-      <img src={placeholder.src} alt="Imagen de referencia para la foto real de la contadora" class="w-full rounded-lg border border-slate-200 bg-slate-100 shadow-sm" loading="lazy" />
+      <img src={aboutImage.src} alt="Retrato profesional de Rosario Trincado" class="w-full rounded-lg border border-slate-200 bg-slate-100 object-cover shadow-sm" loading="lazy" />
       <div class="mt-4 grid gap-3 sm:grid-cols-3">
         {strengths.map(({ icon: Icon, label }, index) => (
           <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 transition duration-300 hover:-translate-y-1 hover:border-copper-100 hover:shadow-sm" data-reveal style={`--reveal-delay: ${index * 70}ms`}>

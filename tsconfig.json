@@ -4,5 +4,6 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": ["_tmp_rosario_zip", "dist", "node_modules"]
 }
