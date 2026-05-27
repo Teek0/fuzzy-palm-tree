@@ -1,7 +1,7 @@
 ---
 import { ArrowDown, CircleCheck, MessageCircle } from '@lucide/astro';
 import accountant from '@/assets/accountant.jpg';
-import { business, whatsappUrl } from '@/content/site';
+import { business } from '@/content/site';
 
 const trustSignals = [
   'Más de 40 años de experiencia',
@@ -26,13 +26,11 @@ const trustSignals = [
       </p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row" data-reveal style="--reveal-delay: 120ms">
         <a
-          href={whatsappUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/contact"
           class="whatsapp-motion inline-flex items-center justify-center gap-2 rounded-lg bg-navy-900 px-6 py-3 text-base font-semibold text-white no-underline shadow-sm hover:bg-navy-800"
         >
           <MessageCircle size={20} aria-hidden="true" />
-          Conversemos
+          Pedir orientación contable
         </a>
         <a
           href="/services"

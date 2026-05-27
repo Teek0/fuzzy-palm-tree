@@ -22,8 +22,7 @@ export const featureFlags = {
 const allNavItems = [
   { label: 'Servicios', href: '/services' },
   { label: 'Sobre mí', href: '/about' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Hablemos', href: '/contact' }
+  { label: 'Blog', href: '/blog' }
 ] as const;
 
 export const navItems = allNavItems.filter((item) => featureFlags.blogEnabled || item.href !== '/blog');

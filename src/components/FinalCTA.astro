@@ -1,6 +1,5 @@
 ---
 import { ArrowRight, Mail } from '@lucide/astro';
-import { business, whatsappUrl } from '@/content/site';
 ---
 
 <section class="bg-navy-900">
@@ -18,14 +17,12 @@ import { business, whatsappUrl } from '@/content/site';
       Cuéntame qué te preocupa: impuestos, pagos, cobranza, costos o simplemente entender mejor tu negocio.
     </p>
     <a
-      href={whatsappUrl()}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="/contact"
       class="whatsapp-motion mt-8 inline-flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-navy-900 no-underline hover:bg-copper-50"
       data-reveal
       style="--reveal-delay: 180ms"
     >
-      Escribir a {business.name}
+      Ver opciones de contacto
       <ArrowRight size={18} aria-hidden="true" />
     </a>
   </div>
